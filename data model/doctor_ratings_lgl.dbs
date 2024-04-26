@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="doctor_ratings" id="LogicalDesign-2131" database="LogicalDesign" >
+	<schema name="INSTANCE" catalogname="doctor_ratings" >
+		<table name="dim_doctor" spec="" >
+			<column name="doctor_id" type="VARCHAR" jt="12" mandatory="y" />
+			<column name="full_name" type="VARCHAR" length="100" jt="12" />
+			<column name="specialty_name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_dim_doctor" unique="PRIMARY_KEY" >
+				<column name="doctor_id" />
+			</index>
+		</table>
+		<table name="dim_location" spec="" >
+			<column name="location_id" type="VARCHAR" jt="12" mandatory="y" />
+			<column name="location_name" type="VARCHAR" length="100" jt="12" />
+			<column name="location_postal_code" type="VARCHAR" length="20" jt="12" />
+			<column name="location_city_name" type="VARCHAR" length="100" jt="12" />
+			<column name="country_name" type="VARCHAR" length="100" jt="12" />
+			<column name="province_name" type="VARCHAR" length="100" jt="12" />
+			<index name="pk_dim_location" unique="PRIMARY_KEY" >
+				<column name="location_id" />
+			</index>
+		</table>
+		<table name="dim_location_rating" spec="" >
+			<column name="location_rating_id" prior="location_id" type="INT" jt="4" mandatory="y" />
+			<column name="cleanliness_rating" type="VARCHAR" jt="12" />
+			<column name="facilities_rating" type="VARCHAR" jt="12" />
+			<column name="services_rating" type="VARCHAR" jt="12" />
+			<column name="best_rating" type="VARCHAR" jt="12" />
+			<column name="average_rating" type="VARCHAR" jt="12" />
+			<column name="rating_count" type="INT" jt="4" />
+			<index name="pk_dim_location_rating" unique="PRIMARY_KEY" >
+				<column name="location_rating_id" />
+			</index>
+			<index name="idx_dim_location_rating_location_rating_id" unique="NORMAL" >
+				<column name="location_rating_id" />
+			</index>
+		</table>
+		<table name="dim_rating" spec="" >
+			<column name="rating_id" type="VARCHAR" jt="12" mandatory="y" />
+			<column name="average_rating" type="VARCHAR" jt="12" />
+			<column name="staff_rating" type="VARCHAR" jt="12" />
+			<column name="punctuality_rating" type="VARCHAR" jt="12" />
+			<column name="helpfulness_rating" type="VARCHAR" jt="12" />
+			<column name="knowledge_rating" type="VARCHAR" jt="12" />
+			<column name="best_rating" type="VARCHAR" jt="12" />
+			<column name="rating_count" type="INT" jt="4" />
+			<index name="pk_dim_rating" unique="PRIMARY_KEY" >
+				<column name="rating_id" />
+			</index>
+		</table>
+		<table name="fact_doctor_ratings" spec="" >
+			<column name="fact_id" type="INT" jt="4" mandatory="y" />
+			<column name="doctor_id" type="INT" jt="4" mandatory="y" />
+			<column name="location_id" type="INT" jt="4" mandatory="y" />
+			<column name="rating_id" type="INT" jt="4" mandatory="y" />
+			<column name="location_rating_id" type="INT" jt="4" mandatory="y" />
+			<index name="idx_fact_doctor_ratings_location_id" unique="NORMAL" >
+				<column name="location_id" />
+			</index>
+			<index name="idx_fact_doctor_ratings_doctor_id" unique="NORMAL" >
+				<column name="doctor_id" />
+			</index>
+			<index name="idx_fact_doctor_ratings_rating_id" unique="NORMAL" >
+				<column name="rating_id" />
+			</index>
+			<index name="pk_fact_doctor_ratings" unique="PRIMARY_KEY" >
+				<column name="fact_id" />
+			</index>
+			<index name="idx_fact_doctor_ratings_location_rating_id" unique="NORMAL" >
+				<column name="location_rating_id" />
+			</index>
+			<fk name="fk_fact_doctor_ratings_dim_location" virtual="y" to_schema="doctor_ratings.INSTANCE" to_table="dim_location" type="NonIdentifying" mandatory="y" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="location_id" pk="location_id" />
+			</fk>
+			<fk name="fk_fact_doctor_ratings_dim_doctor" virtual="y" to_schema="doctor_ratings.INSTANCE" to_table="dim_doctor" type="NonIdentifying" mandatory="y" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="doctor_id" pk="doctor_id" />
+			</fk>
+			<fk name="fk_fact_doctor_ratings_dim_rating" virtual="y" to_schema="doctor_ratings.INSTANCE" to_table="dim_rating" type="NonIdentifying" mandatory="y" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="rating_id" pk="rating_id" />
+			</fk>
+			<fk name="fk_fact_doctor_ratings_dim_location_rating" virtual="y" to_schema="doctor_ratings.INSTANCE" to_table="dim_location_rating" type="NonIdentifying" mandatory="y" cardinality="OneMore" range_from="0" range_to="0" >
+				<fk_column name="location_rating_id" pk="location_rating_id" />
+			</fk>
+		</table>
+	</schema>
+	<layout name="Default Layout" id="Layout-1656" show_relation="columns" >
+		<entity schema="doctor_ratings.INSTANCE" name="dim_doctor" color="3986C1" x="480" y="48" />
+		<entity schema="doctor_ratings.INSTANCE" name="dim_location" color="3986C1" x="48" y="48" />
+		<entity schema="doctor_ratings.INSTANCE" name="dim_location_rating" color="3986C1" x="80" y="416" />
+		<entity schema="doctor_ratings.INSTANCE" name="dim_rating" color="3986C1" x="528" y="400" />
+		<entity schema="doctor_ratings.INSTANCE" name="fact_doctor_ratings" color="3986C1" x="320" y="256" />
+	</layout>
+</project>

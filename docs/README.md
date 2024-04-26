@@ -5,4 +5,4 @@ documents including:
 -Metadata
 -Data Warehouse Architecture
 -Monitoring and Maintenance Procedues
--Images
+

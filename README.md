@@ -1,1 +1,1 @@
-# Doctor-Ratings
+# DocScore: Doctor Ratings for Clients

@@ -1,13 +1,13 @@
 # DocScore: Doctor Ratings for Clients
 
-# Introduction:
+## Introduction:
 
-# Features:
+## Features:
 
-# Installation:
+## Installation:
 
-# Usage:
+## Usage:
 
-# Examples:
+## Examples:
 
-# Contributing:
+## Contributing:

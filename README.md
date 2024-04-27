@@ -2,9 +2,9 @@
 
 ## Introduction:
 
-## Features:
+## Methodology:
 
-## Installation:
+## Features:
 
 ## Usage:
 

@@ -1,4 +1,4 @@
-# DocScore: Doctor Ratings for Clients
+# DocScore: Doctor Ratings for Insights
 
 ## Introduction:
 

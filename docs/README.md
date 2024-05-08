@@ -13,3 +13,7 @@ documents including:
 -Data Warehouse Architecture
 
 -Monitoring and Maintenance Procedues
+
+-Validation Tests
+
+-User Manual

@@ -2,7 +2,7 @@
 
 
 Company Description:
-Our company is involved in analyzing healthcare, particularly in the evaluation of doctor ratings on platforms like RateMDs. It is interested in providing insights or services related to these ratings, possibly to improve patient experiences or assist healthcare providers in understanding their online reputations.
+Our company is involved in analyzing healthcare, particularly in the evaluation of doctor ratings on platforms like RateMDs. We are interested in providing insights or services related to these ratings, possibly to improve patient experiences or assist healthcare providers in understanding their online reputations.
 
 
 Requirements:

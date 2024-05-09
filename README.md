@@ -8,13 +8,13 @@ Our company is involved in analyzing healthcare, particularly in the evaluation 
 
 **Requirements:**
 
--Evaluation of doctor ratings on RateMDs
+Evaluation of doctor ratings on RateMDs
 
--Utilization of ratings data 
+Utilization of ratings data 
 
--Research on ratings data 
+Research on ratings data 
 
--Incorporation of geolocation data for location-based analysis
+Incorporation of geolocation data for location-based analysis
 
 
 ## Business Impact

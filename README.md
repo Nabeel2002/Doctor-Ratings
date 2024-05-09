@@ -56,3 +56,9 @@ Researchers or analysts: To conduct further research or analysis on healthcare d
 ## Interface
 
 ## Contributing
+
+Nabeel Bahrawi 
+
+Jeffery Liu 
+
+Jacky Jiang

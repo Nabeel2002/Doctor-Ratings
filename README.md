@@ -1,13 +1,29 @@
 # DocScore: Doctor Ratings for Insights
 
-## Introduction:
+## Business Problem:
 
-## Methodology:
+## Business Impact:
 
-## Features:
+Risks:
 
-## Usage:
+Costs:
 
-## Examples:
+Benefits:
+
+## Business Persona:
+
+## Data:
+
+## Methods:
+
+## Data Tools:
+
+Data Storage:
+
+Data Processing:
+
+Data Orchestration:
+
+## Interface:
 
 ## Contributing:

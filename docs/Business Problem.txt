@@ -15,11 +15,11 @@ Requirements:
 
 
 Missing Requirements:
-There may be a need for clarity on the scope of the project, such as the specific objectives or deliverables expected.
+There may be a need for clarity on the scope.
 
 
 Business Impact:
-Risks: Potential risks may include inaccuracies in the data, privacy concerns with handling healthcare data, and challenges in implementing effective fuzz matching algorithms.
+Risks: Potential risks may include inaccuracies in the data, and privacy concerns with handling healthcare data.
 Costs: Costs may be associated with acquiring and processing the data, as well as the development and maintenance of the system.
 Benefits: Our company stands to benefit from improved insights into doctor ratings, potentially leading to better decision-making for patients and healthcare providers. This could enhance patient satisfaction, improve healthcare quality, and positively impact the reputation of our company.
 

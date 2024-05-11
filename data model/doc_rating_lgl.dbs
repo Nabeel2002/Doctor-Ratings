@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="doctor_ratings" id="MongoDb-bb6" database="MongoDb" >
+	<schema name="INSTANCE" catalogname="doctor_ratings" >
+		<table name="dim_doctor" spec="" >
+			<column name="doctor_id" type="string" jt="12" mandatory="y" />
+			<column name="full_name" type="string" length="100" jt="12" />
+			<column name="specialty_name" type="string" length="100" jt="12" />
+			<index name="pk_dim_doctor" unique="PRIMARY_KEY" >
+				<column name="doctor_id" />
+			</index>
+		</table>
+		<table name="dim_location" spec="" >
+			<column name="location_id" type="string" jt="12" mandatory="y" />
+			<column name="location.name" type="string" length="100" jt="12" />
+			<column name="location.postal_code" type="string" length="20" jt="12" />
+			<column name="location.suite" type="string" length="100" jt="12" />
+			<column name="location.address" type="string" length="100" jt="12" />
+			<column name="location.longitude" type="double" length="9" decimal="6" jt="8" />
+			<column name="location.latitude" type="double" length="9" decimal="6" jt="8" />
+			<index name="pk_dim_location" unique="PRIMARY_KEY" >
+				<column name="location_id" />
+			</index>
+		</table>
+		<table name="dim_location_city" >
+			<column name="location_city_id" type="int" jt="4" mandatory="y" />
+			<column name="location.city.name" type="string" length="100" jt="12" />
+			<column name="location.city.country_name" type="string" length="100" jt="12" />
+			<column name="location.city.province_name" type="string" length="100" jt="12" />
+			<index name="pk_dim_location_city" unique="PRIMARY_KEY" >
+				<column name="location_city_id" />
+			</index>
+			<index name="idx_dim_location_city_location_city_id" unique="NORMAL" >
+				<column name="location_city_id" />
+			</index>
+		</table>
+		<table name="dim_location_rating" spec="" >
+			<column name="location_rating_id" type="int" jt="4" mandatory="y" />
+			<index name="pk_dim_location_rating" unique="PRIMARY_KEY" >
+				<column name="location_rating_id" />
+			</index>
+			<index name="idx_dim_location_rating_location_rating_id" unique="NORMAL" >
+				<column name="location_rating_id" />
+			</index>
+		</table>
+		<table name="dim_rating" spec="" >
+			<column name="rating_id" type="string" jt="12" mandatory="y" />
+			<index name="pk_dim_rating" unique="PRIMARY_KEY" >
+				<column name="rating_id" />
+			</index>
+		</table>
+		<table name="fact_doctor_ratings" spec="" >
+			<column name="fact_id" type="int" jt="4" mandatory="y" />
+			<column name="doctor_id" type="int" jt="4" mandatory="y" />
+			<column name="location_id" type="int" jt="4" mandatory="y" />
+			<column name="location_city_id" type="int" jt="4" mandatory="y" />
+			<column name="rating_id" type="int" jt="4" mandatory="y" />
+			<column name="location_rating_id" type="int" jt="4" mandatory="y" />
+			<column name="rating.staff" type="double" length="15" decimal="14" jt="8" />
+			<column name="rating.punctuality" type="double" length="15" decimal="14" jt="8" />
+			<column name="rating.helpfulness" type="double" length="15" decimal="14" jt="8" />
+			<column name="rating.knowledge" type="double" length="15" decimal="14" jt="8" />
+			<column name="rating.bestRating" type="double" length="15" decimal="14" jt="8" />
+			<column name="rating.count" type="int" jt="4" />
+			<column name="location.rating.cleanliness" type="double" length="15" decimal="14" jt="8" />
+			<column name="location.rating.facilities" type="double" length="15" decimal="14" jt="8" />
+			<column name="location.rating.services" type="double" length="15" decimal="14" jt="8" />
+			<column name="location.rating.bestRating" type="double" length="15" decimal="14" jt="8" />
+			<column name="location.rating.average" type="double" length="15" decimal="14" jt="8" />
+			<column name="location.rating.value" type="double" length="15" decimal="14" jt="8" />
+			<column name="location.rating.count" type="int" jt="4" />
+			<index name="idx_fact_doctor_ratings_location_id" unique="NORMAL" >
+				<column name="location_id" />
+			</index>
+			<index name="idx_fact_doctor_ratings_doctor_id" unique="NORMAL" >
+				<column name="doctor_id" />
+			</index>
+			<index name="idx_fact_doctor_ratings_rating_id" unique="NORMAL" >
+				<column name="rating_id" />
+			</index>
+			<index name="pk_fact_doctor_ratings" unique="PRIMARY_KEY" >
+				<column name="fact_id" />
+			</index>
+			<index name="idx_fact_doctor_ratings_location_rating_id" unique="NORMAL" >
+				<column name="location_rating_id" />
+			</index>
+			<index name="idx_fact_doctor_ratings_location_city_id" unique="NORMAL" >
+				<column name="location_city_id" />
+			</index>
+			<fk name="fk_fact_doctor_ratings_dim_location" virtual="y" to_schema="doctor_ratings.INSTANCE" to_table="dim_location" >
+				<fk_column name="location_id" pk="location_id" />
+			</fk>
+			<fk name="fk_fact_doctor_ratings_dim_doctor" virtual="y" to_schema="doctor_ratings.INSTANCE" to_table="dim_doctor" >
+				<fk_column name="doctor_id" pk="doctor_id" />
+			</fk>
+			<fk name="fk_fact_doctor_ratings_dim_rating" virtual="y" to_schema="doctor_ratings.INSTANCE" to_table="dim_rating" >
+				<fk_column name="rating_id" pk="rating_id" />
+			</fk>
+			<fk name="fk_fact_doctor_ratings_dim_location_rating" virtual="y" to_schema="doctor_ratings.INSTANCE" to_table="dim_location_rating" >
+				<fk_column name="location_rating_id" pk="location_rating_id" />
+			</fk>
+			<fk name="fk_fact_doctor_ratings_dim_location_city" to_schema="doctor_ratings.INSTANCE" to_table="dim_location_city" >
+				<fk_column name="location_city_id" pk="location_city_id" />
+			</fk>
+		</table>
+	</schema>
+	<layout name="Default Layout" id="Layout-2272" confirmed="y" show_relation="columns" >
+		<entity schema="doctor_ratings.INSTANCE" name="dim_doctor" color="3986C1" x="752" y="336" />
+		<entity schema="doctor_ratings.INSTANCE" name="dim_location" color="3986C1" x="48" y="208" />
+		<entity schema="doctor_ratings.INSTANCE" name="dim_location_city" color="C1D8EE" x="400" y="48" />
+		<entity schema="doctor_ratings.INSTANCE" name="dim_location_rating" color="3986C1" x="80" y="576" />
+		<entity schema="doctor_ratings.INSTANCE" name="dim_rating" color="3986C1" x="720" y="576" />
+		<entity schema="doctor_ratings.INSTANCE" name="fact_doctor_ratings" color="3986C1" x="352" y="288" />
+		<script name="doctor_ratings _mongodbupdate.sql" id="Editor-2b9" language="SQL" file="file:/C:/Users/Jeffery%20Liu/Downloads/term_project_dw/doctor_ratings%20_mongodbupdate.sql" />
+	</layout>
+</project>

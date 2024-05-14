@@ -60,12 +60,13 @@ We will transfer our source data in batches, due to the high volume of data into
 
 **Dashboard and Visualization on DOMO** 
 
-![visualization](https://github.com/Nabeel2002/Doctor-Ratings/assets/160162018/c49319ae-bc01-46fe-8aaa-36564b4b9c2e)
-
+Best Rating by Specialty and City
 ![visualization1](https://github.com/Nabeel2002/Doctor-Ratings/assets/160162018/a31448d4-3a84-4203-b764-0548492724de)
 
+Best City for Specialty
 ![visualization2](https://github.com/Nabeel2002/Doctor-Ratings/assets/160162018/6b04e7db-a0e6-4f00-b68a-5190825fa684)
 
+Average Rating vs Staff Rating
 ![visualization3](https://github.com/Nabeel2002/Doctor-Ratings/assets/160162018/c93f3ed4-c723-4671-99ea-06b37274420e)
 
 

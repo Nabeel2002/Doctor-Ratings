@@ -55,7 +55,7 @@ Researchers or analysts: To conduct further research or analysis on healthcare d
 
 ## Interface
 
-**Visualized on DOMO** 
+**Dashboard and Visualization on DOMO** 
 
 ![visualization](https://github.com/Nabeel2002/Doctor-Ratings/assets/160162018/c49319ae-bc01-46fe-8aaa-36564b4b9c2e)
 

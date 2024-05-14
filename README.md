@@ -54,6 +54,7 @@ We will use MongoDB as our storage for both the raw data and transformed data.
 
 **Data Processing:**
 We will transfer our source data in batches, due to the high volume of data into MongoDB. Then, we will convert our raw data into actionable information to fit our business requirements and our data model. Finally, we will serve our transformed data into Domo for visualization that user can identify ratings of doctor locations in the U.S.
+
 **Data Orchestration:**
 
 ## Interface

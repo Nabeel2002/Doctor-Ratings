@@ -55,6 +55,18 @@ Researchers or analysts: To conduct further research or analysis on healthcare d
 
 ## Interface
 
+**Visualized on DOMO** 
+
+![visualization](https://github.com/Nabeel2002/Doctor-Ratings/assets/160162018/c49319ae-bc01-46fe-8aaa-36564b4b9c2e)
+
+![visualization1](https://github.com/Nabeel2002/Doctor-Ratings/assets/160162018/a31448d4-3a84-4203-b764-0548492724de)
+
+![visualization2](https://github.com/Nabeel2002/Doctor-Ratings/assets/160162018/6b04e7db-a0e6-4f00-b68a-5190825fa684)
+
+![visualization3](https://github.com/Nabeel2002/Doctor-Ratings/assets/160162018/c93f3ed4-c723-4671-99ea-06b37274420e)
+
+
+
 ## Contributing
 
 Nabeel Bahrawi 
